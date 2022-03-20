@@ -4,6 +4,8 @@ from django.template.defaultfilters import slugify
 class MealCategory(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
+    image = models.ImageField(upload_to='images/', blank=True)
+
     def __str__(self):
         return self.title
 

@@ -1,8 +1,9 @@
 import React from 'react';
+import logo from '../logo.png';
 
 const navbar = () => (
     <nav>
-        Navbar
+        <img className="logo" src={logo} />
     </nav>
 );
 

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './hocs/Layout';
 import Category from './components/Category';
 import Home from './components/Home';
+import './App.css';
 
 const App = () => (
     <Layout>

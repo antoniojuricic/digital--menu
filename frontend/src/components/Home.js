@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import CategoryCard from './CategoryCard'
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
@@ -12,7 +13,6 @@ const Home = () => {
             setCategories(res.data);
         }
         catch (err) {
-
         }
     }
 
@@ -20,14 +20,19 @@ const Home = () => {
 }, []);
 
     return (
-      <ul>
+      <div className="container">
+        <div className="header">MENU</div>
         {
           categories
             .map(category =>
-              <li key={category.id}><Link to={`category/${category.slug}`}>{category.title}</Link></li>
+              <Link to = {`category/${category.slug}/`} style={{ textDecoration: 'none' }}>
+                <CategoryCard title={category.title} image={category.image}/>
+                <hr/>
+              </Link> 
+              
             )
         }
-      </ul>
+      </div>
     );
     
 }
